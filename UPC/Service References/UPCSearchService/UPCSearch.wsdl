@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://searchupc.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://searchupc.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://searchupc.com/">
+      <s:element name="GetProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductJSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Validate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertToUPCA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upce" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertToUPCAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertToUPCAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateBarcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateBarcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateBarcodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuggestProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productnamewithmanufacturer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productattribute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuggestProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SuggestProductResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetProductJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:Validate" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertToUPCASoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertToUPCA" />
+  </wsdl:message>
+  <wsdl:message name="ConvertToUPCASoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertToUPCAResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateBarcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateBarcode" />
+  </wsdl:message>
+  <wsdl:message name="GenerateBarcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuggestProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SuggestProduct" />
+  </wsdl:message>
+  <wsdl:message name="SuggestProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SuggestProductResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UPCSearchSoap">
+    <wsdl:operation name="GetProduct">
+      <wsdl:input message="tns:GetProductSoapIn" />
+      <wsdl:output message="tns:GetProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductJSON">
+      <wsdl:input message="tns:GetProductJSONSoapIn" />
+      <wsdl:output message="tns:GetProductJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <wsdl:input message="tns:ValidateSoapIn" />
+      <wsdl:output message="tns:ValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToUPCA">
+      <wsdl:input message="tns:ConvertToUPCASoapIn" />
+      <wsdl:output message="tns:ConvertToUPCASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateBarcode">
+      <wsdl:input message="tns:GenerateBarcodeSoapIn" />
+      <wsdl:output message="tns:GenerateBarcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SuggestProduct">
+      <wsdl:input message="tns:SuggestProductSoapIn" />
+      <wsdl:output message="tns:SuggestProductSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UPCSearchSoap" type="tns:UPCSearchSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://searchupc.com/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductJSON">
+      <soap:operation soapAction="http://searchupc.com/GetProductJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap:operation soapAction="http://searchupc.com/Validate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToUPCA">
+      <soap:operation soapAction="http://searchupc.com/ConvertToUPCA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateBarcode">
+      <soap:operation soapAction="http://searchupc.com/GenerateBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuggestProduct">
+      <soap:operation soapAction="http://searchupc.com/SuggestProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UPCSearchSoap12" type="tns:UPCSearchSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProduct">
+      <soap12:operation soapAction="http://searchupc.com/GetProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductJSON">
+      <soap12:operation soapAction="http://searchupc.com/GetProductJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap12:operation soapAction="http://searchupc.com/Validate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToUPCA">
+      <soap12:operation soapAction="http://searchupc.com/ConvertToUPCA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateBarcode">
+      <soap12:operation soapAction="http://searchupc.com/GenerateBarcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuggestProduct">
+      <soap12:operation soapAction="http://searchupc.com/SuggestProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UPCSearch">
+    <wsdl:port name="UPCSearchSoap" binding="tns:UPCSearchSoap">
+      <soap:address location="http://www.searchupc.com/supc/service/UPCSearch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UPCSearchSoap12" binding="tns:UPCSearchSoap12">
+      <soap12:address location="http://www.searchupc.com/supc/service/UPCSearch.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
